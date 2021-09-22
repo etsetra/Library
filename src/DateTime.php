@@ -1,12 +1,9 @@
 <?php
 
 /*
- * This file is part of etsetra/DT
+ * This file is part of etsetra/Library
  *
  * (c) Etsetra <hello@etsetra.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
  */
 namespace etsetra\Library;
 
