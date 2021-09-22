@@ -1,0 +1,36 @@
+{
+    "name": "etsetra/library",
+    "description": "Helpers for etsetra projects.",
+    "keywords": ["etsetra", "Library", "Laravel", "PHP"],
+    "homepage": "https://github.com/etsetra/Library",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mutlu",
+            "email": "mutlu@etsetra.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0|^8.0"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "etsetra\\Library\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "etsetra\\Library\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
