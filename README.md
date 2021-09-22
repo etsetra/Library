@@ -1,6 +1,9 @@
 # Library
 
-### DateTime
+#### Installation
+    composer require etsetra/library
+
+#### DateTime
     use etsetra\Library\DateTime;
     
     echo (new DT)->nowAt();
@@ -9,7 +12,7 @@
     echo (new DT)->createFromFormat('d.m.Y H:i:s', '30.09.2021 00:00:00');
     // 2021-09-30T00:00:00+00:00
 
-### Lorem
+#### Lorem
     use etsetra\Library\Lorem;
     
     print_r((new Lorem)->ipsum(1));
