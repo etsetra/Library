@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "etsetra\\Library\\": "src/"
+            "Etsetra\\Library\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "etsetra\\Library\\Tests\\": "tests/"
+            "Etsetra\\Library\\Tests\\": "tests/"
         }
     },
     "scripts": {
