@@ -12,7 +12,8 @@
         }
     ],
     "require": {
-        "php": "^7.0|^8.0"
+        "php": "^7.0|^8.0",
+        "laravel/framework": "^8.54"
     },
     "require-dev": {
     },
@@ -27,10 +28,5 @@
         }
     },
     "scripts": {
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        }
     }
 }
