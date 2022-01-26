@@ -38,8 +38,10 @@
     use Etsetra\Library\Nokogiri;
 
 #### ArrayTo
-
     use Etsetra\Library\ArrayTo;
 
     // Returns the XML output of the Array value.
     echo (new ArrayTo)->xml([ 'name' => 'Hakkı', 'class' => '4ABC' ]);
+
+    // Returns the CSV output of the Array value.
+    echo (new ArrayTo)->csv([ 'name' => 'Hakkı', 'class' => '4ABC' ]);

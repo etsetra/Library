@@ -11,6 +11,12 @@ use DOMDocument;
 
 class ArrayTo
 {
+    /**
+     * Array2Xml
+     * 
+     * @param array $array
+     * @return xml
+     */
     public function xml(array $array)
     {
         $dom = new DOMDocument('1.0', 'utf-8');
@@ -24,7 +30,28 @@ class ArrayTo
         return $dom->saveXML();
     }
 
-    private function array2xml($array, $node, &$dom)
+    /**
+     * Array2Csv
+     * 
+     * @param array $array
+     * @return xml
+     */
+    public function csv(array $array)
+    {
+        $lines = [];
+
+        foreach ($array as $v)
+        {
+            $lines[] = $this->array2csv($v);
+        }
+
+        return implode(PHP_EOL, $lines);
+    }
+
+    /**
+     * Array2Xml Core
+     */
+    private function array2xml(array $array, $node, &$dom)
     {
         foreach ($array as $key => $value)
         {
@@ -44,5 +71,20 @@ class ArrayTo
             else
                 $this->array2xml($value, $a, $dom);
         }
+    }
+
+    /**
+     * Array2Csv Core
+     */
+    private function array2csv(array $line)
+    {
+        $csv_line = [];
+
+        foreach ($line as $v)
+        {
+            $csv_line[] = is_array($v) ? $this->array2csv($v) : '"'.str_replace('"', "'", $v).'"';
+        }
+
+        return implode(';', $csv_line);
     }
 }
