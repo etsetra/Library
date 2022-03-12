@@ -40,4 +40,25 @@ class Helpers
 
         return implode('-', $keys);
     }
+
+    /**
+     * Human readable file size
+     * 
+     * @param integer $size
+     * @param integer $precision
+     * @return string
+     */
+    public static function human_file_size(int $size, int $precision = 2)
+    {
+        if ($size > 0)
+        {
+            $size = $size;
+            $base = log($size) / log(1024);
+            $suffixes = [ 'bytes', 'KB', 'MB', 'GB', 'TB' ];
+
+            return round(pow(1024, $base - floor($base)), $precision).' '.$suffixes[floor($base)];
+        }
+
+        return $size;
+    }
 }
