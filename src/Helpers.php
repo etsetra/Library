@@ -61,4 +61,39 @@ class Helpers
 
         return $size;
     }
+
+    /**
+     * HEX color to RGBA color
+     * 
+     * @param string $color
+     * @param float $alpha
+     * @return string
+     */
+    public function hex2rgba(string $color, float $alpha = 1.0)
+    {
+        if ($color[0] != '#')
+            return null;
+
+        if (strlen($color) == 7)
+        {
+            $red = $color[1].$color[2];
+            $green = $color[3].$color[4];
+            $blue = $color[5].$color[6];
+        }
+        else if (strlen($color) == 4)
+        {
+            $red = $color[1];
+            $green = $color[2];
+            $blue = $color[3];
+        }
+        else
+            return null;
+
+        $alpha = $alpha > 1 ? 1 : $alpha;
+        $alpha = $alpha < 0 ? 0 : $alpha;
+
+        $rgba = implode(', ', array_map('hexdec', [ $red, $green, $blue ]));
+
+        return "rgba($rgba, $alpha)";
+    }
 }
