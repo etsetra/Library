@@ -69,7 +69,7 @@ class Helpers
      * @param float $alpha
      * @return string
      */
-    public function hex2rgba(string $color, float $alpha = 1.0)
+    public static function hex2rgba(string $color, float $alpha = 1.0)
     {
         if ($color[0] != '#')
             return null;
